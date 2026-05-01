@@ -259,6 +259,12 @@ footer {
     align-items: center;
 
     display: none;
+
+    font-size: 28px;
+    word-spacing: .5rem;
+    letter-spacing: .5rem;
+    line-height: 2;
+
   }
 
   nav ul.active {
@@ -268,4 +274,5 @@ footer {
   .menu-toggle {
     display: block;
   }
+
 }
