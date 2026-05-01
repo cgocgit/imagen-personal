@@ -19,7 +19,7 @@
     <nav>
       <h1>Xari Kokkinidis</h1>
       <div class="menu-toggle" id="menu-toggle">☰</div>
-      <ul>
+      <ul id="menu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#quien-soy">Quién soy</a></li>
         <li><a href="#servicio">Servicio</a></li>
@@ -106,7 +106,7 @@
   <section id="contacto">
     <div class="linea"></div>
     <h2>Contacto</h2>
-    <form onsubmit="return enviarFormulario(event)">
+    <form id="form-contacto" onsubmit="return enviarFormulario(event)">
       <input type="text" placeholder="Nombre" required>
       <input type="email" placeholder="Correo" required>
       <textarea rows="4" placeholder="Mensaje" required></textarea>
