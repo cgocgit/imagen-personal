@@ -241,25 +241,31 @@ footer {
 /* 📱 MOBILE FIX REAL */
 @media (max-width: 768px) {
 
-  /* mostrar hamburguesa */
-  .menu-toggle {
-    display: block;
+  nav {
+    position: relative;
   }
 
-  /* 🔥 OCULTAR menú por defecto */
   nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--bg);
-    position: absolute;
-    top: 100%;
+    position: fixed;              /* 🔥 clave */
+    top: 70px;                    /* altura del header */
     left: 0;
-    padding: 1rem 0;
+    width: 100%;
+    height: calc(100vh - 70px);   /* ocupa el resto de pantalla */
+    
+    background-color: var(--bg);
+    
+    flex-direction: column;
+    justify-content: center;      /* centra vertical */
+    align-items: center;
+
+    display: none;
   }
 
-  /* 🔥 MOSTRAR cuando esté activo */
   nav ul.active {
     display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
