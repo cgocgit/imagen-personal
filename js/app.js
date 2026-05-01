@@ -13,12 +13,27 @@ window.addEventListener('scroll', () => {
 
 // Manejo de formulario
 const form = document.getElementById('form-contacto');
+const alertBox = document.getElementById('form-alert');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Mensaje enviado correctamente');
-  form.reset();
-});
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Mostrar mensaje
+    alertBox.textContent = 'Hemos recibido tu mensaje. En breve nos pondremos en contacto contigo para brindarte la atención que mereces.';
+    alertBox.classList.add('success');
+    alertBox.style.display = 'block';
+
+    // Reset form
+    form.reset();
+
+    // Ocultar después de 3s
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+      alertBox.classList.remove('success');
+    }, 3000);
+  });
+}
 
 // 🔥 menú hamburguesa
 const toggle = document.getElementById("menu-toggle");
@@ -40,3 +55,4 @@ links.forEach(link => {
 });
 
 document.body.style.overflow = 'auto';
+alertBox.classList.add('show');

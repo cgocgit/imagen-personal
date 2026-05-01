@@ -195,6 +195,9 @@ form {
 
 input,
 textarea {
+  font-family: 'vocago', sans-serif;
+  font-size: 18px;
+  letter-spacing: .08rem;
   padding: 0.7rem;
   border: 1px solid var(--accent);
   background: transparent;
@@ -281,4 +284,63 @@ footer {
     display: block;
   }
 
+}
+
+.btn-right {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+}
+
+/* Lista servicios */
+.marco-propuesta ul,
+.marco-objetivos ul {
+  list-style: none; /* elimina viñeta default */
+  padding-left: 0;
+}
+
+/* Items */
+.marco-propuesta li,
+.marco-objetivos li {
+  position: relative;
+  padding-left: 1.8rem; /* espacio para flecha */
+  margin-bottom: 0.5rem;
+
+  font-family: 'vocago', sans-serif; /* 🔥 aquí defines fuente */
+}
+
+/* Flecha premium */
+.marco-propuesta li::before,
+.marco-objetivos li::before {
+  content: "➤"; /* puedes cambiar icono */
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #D4AF37; /* dorado */
+  font-size: 0.9rem;
+}
+
+.form-alert {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  
+  color: var(--primary);
+  font-family: 'vocago', sans-serif;
+  display: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* éxito */
+.form-alert.success {
+  border-color: #D4AF37;
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.form-alert.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
