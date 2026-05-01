@@ -1,0 +1,265 @@
+@font-face {
+  font-family: 'qarinthen';
+  src: url('../fonts/Qarinthen.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'vocago';
+  src: url('../fonts/Vocago.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'beyline';
+  src: url('../fonts/Beyline.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg: #F5F1EB;
+  --primary: #5A2E2E;
+  --accent: #A3A089;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(245, 241, 235, 0.95);
+  backdrop-filter: blur(6px);
+  margin: 0;
+}
+
+h1 {
+  font-family: 'beyline', sans-serif;
+  color: var(--primary);
+  word-spacing: .3rem;
+  letter-spacing: .1rem;
+}
+
+h2,
+h3 {
+  color: var(--primary);
+  font-family: 'qarinthen', sans-serif;
+  word-spacing: .2rem;
+  letter-spacing: .08rem;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'vocago', sans-serif;
+  font-size: 18px;
+  letter-spacing: .08rem;
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+header {
+  background-color: rgba(163, 160, 137, 1);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(163, 160, 137, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+nav {
+  font-family: 'qarinthen', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* HEADER SIEMPRE VISIBLE */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0B0B0B;
+  position: relative;
+  z-index: 1000;
+  /* 🔥 evita que desaparezca */
+}
+
+/* LOGO */
+.logo {
+  color: #D4AF37;
+  font-size: 20px;
+}
+
+/* MENU DESKTOP */
+.nav ul {
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+}
+
+/* LINKS */
+.nav a {
+  color: #F5E6A9;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.marco-propuesta,
+.marco-objetivos {
+  background-color: var(--bg);
+  border: 3px solid var(--accent);
+  padding: 1rem;
+  margin: 0.5%;
+  width: 49%;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.marco-propuesta:hover,
+.marco-objetivos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  padding: 0.7rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+
+  .marco-propuesta,
+  .marco-objetivos {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.linea {
+  width: 100%;
+  margin-left: calc(-50vw + 50%);
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  margin: 30px 0;
+
+}
+
+/* 🔥 HAMBURGUESA (oculta en desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* 📱 MOBILE FIX REAL */
+@media (max-width: 768px) {
+
+  /* mostrar hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* 🔥 OCULTAR menú por defecto */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+  }
+
+  /* 🔥 MOSTRAR cuando esté activo */
+  nav ul.active {
+    display: flex;
+  }
+}
