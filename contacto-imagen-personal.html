@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Imagen personal by Xari Kokkinidis - Quien soy">
+  <title>Diseño Web & SEO Profesional</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles-contacto.css">
+</head>
+
+<body>
+  <header>
+    <h2>Cantacta con imagen personal</h2>
+  </header>
+
+  <nav class="breadcrumbs">
+    <a href="index.html">Inicio</a>
+    <span class="separator"></span>
+    <span class="current">Servicios</span>
+  </nav>
+
+  <section id="contacto">
+    <div class="linea"></div>
+    <h2>Contacto</h2>
+    <form id="form-contacto" onsubmit="return enviarFormulario(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea rows="4" placeholder="Mensaje" required></textarea>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+    <div id="form-alert" class="form-alert"></div>
+  </section>
+</body>
